@@ -1,0 +1,16 @@
+.container {
+    margin: 10px 20px;
+    line-height: 120px;
+}
+
+.icon {
+    padding: 10px;
+    margin: 0px 5px;
+    cursor: pointer;
+    color: #C5B46B;
+    transition: all 500ms ease-in-out;
+}
+
+.icon:hover {
+    transform: rotate(360deg) scale(1.1);
+}

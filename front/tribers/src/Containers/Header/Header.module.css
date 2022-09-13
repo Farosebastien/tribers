@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+    background-image: url("../../Images/background.webp");
+    background-position: center -200px;
+    background-size: cover;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin: 10px 10px 10px 100px;
+}
