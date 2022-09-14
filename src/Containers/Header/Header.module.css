@@ -1,9 +1,9 @@
 .container {
     display: flex;
     justify-content: space-between;
-    height: 700px;
+    height: 650px;
     background-image: url("../../Images/background.webp");
-    background-position: center -200px;
+    background-position: center -100px;
     background-size: cover;
 }
 

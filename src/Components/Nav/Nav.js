@@ -18,22 +18,22 @@ function Nav () {
     const goToConcept = (e) => {
         e.preventDefault();
         history("/");
-    }
+    };
 
     const goToValues = (e) => {
         e.preventDefault();
         history("/values");
-    }
+    };
 
     const goToBlog = (e) => {
         e.preventDefault();
         history("/blog");
-    }
+    };
 
     const goToTrips = (e) => {
         e.preventDefault();
         history("/trips");
-    }
+    };
 
     if (path === "/") {
         conceptClassName += " btn_active";
