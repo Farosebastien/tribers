@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 
-import Styles from "./Trip.module.css";
+import Styles from "./Explanation.module.css";
 
-function Trip (props) {
+function Explanation (props) {
     return (
         <span className={Styles.list}>
             <FontAwesomeIcon icon={faCheck} className={Styles.icon}/>
@@ -15,4 +15,4 @@ function Trip (props) {
     );
 }
 
-export default Trip;
+export default Explanation;

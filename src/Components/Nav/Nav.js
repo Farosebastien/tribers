@@ -49,7 +49,7 @@ function Nav () {
         <div className="navbar">
             <button className={conceptClassName} type="button" onClick={goToConcept}>CONCEPT</button>
             <button className={valuesClassName} type="button" onClick={goToValues}>VALEURS</button>
-            <button className={blogClassName} type="button" onClick={goToBlog}>JOURNAL</button>
+            <button className={blogClassName} type="button" onClick={goToBlog}>BLOG</button>
             <button className={tripsClassName} type="button" onClick={goToTrips}>VOYAGES</button>
         </div>
     );

@@ -11,13 +11,18 @@ function Race () {
         e.preventDefault();
         history("/trips");
     };
+
+    const goToValues = (e) => {
+        e.preventDefault();
+        history("/values");
+    };
     
     return(
         <aside className={Styles.race_container}>
             <div className={Styles.photo_background}>
                 <div className={Styles.race_title}>
                     <h2 className={Styles.title}>Un voyage qui a du sens</h2>
-                    <button className={Styles.race_btn} type="button" onClick={goToTrips}>Découvrir nos valeurs</button>
+                    <button className={Styles.race_btn} type="button" onClick={goToValues}>Découvrir nos valeurs</button>
                 </div>
             </div>
             <div className={Styles.red_background}>

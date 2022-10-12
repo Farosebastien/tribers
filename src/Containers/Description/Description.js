@@ -1,5 +1,5 @@
 import React from "react";
-import Trips from "../../Components/Trips/Trips";
+import Trips from "../../Components/Explanations/Explanations";
 import Race from "../../Components/Race/Race";
 
 import Styles from "./Description.module.css";

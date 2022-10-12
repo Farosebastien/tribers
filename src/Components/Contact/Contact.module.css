@@ -1,13 +1,12 @@
 .container {
-    margin: 10px 20px;
-    line-height: 120px;
+    margin: 50px 20px 0px 20px;
 }
 
 .icon {
     padding: 10px;
     margin: 0px 5px;
     cursor: pointer;
-    color: #C5B46B;
+    color: #c5b56b;
     transition: all 500ms ease-in-out;
 }
 
