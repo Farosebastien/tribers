@@ -1,16 +1,18 @@
-import React from "react";
 import Trips from "../../Components/Explanations/Explanations";
 import Race from "../../Components/Race/Race";
+import styled from "styled-components";
 
-import Styles from "./Description.module.css";
+const DescriptionContainer = styled.section`
+    display: flex;
+`;
 
 function Description () {
 
     return (
-        <section className={Styles.description_container}>
+        <DescriptionContainer>
             <Trips />
             <Race />
-        </section>
+        </DescriptionContainer>
     );
 }
 
