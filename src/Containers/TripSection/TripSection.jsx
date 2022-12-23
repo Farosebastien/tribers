@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
+import { scale } from "../../utils/keyframes";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVuejs } from "@fortawesome/free-brands-svg-icons";
 import TripItem from "../../Components/TripItem/TripItem";
 import TripPageItem from "../../Components/TripPageItem/TripPageItem";
 import Maroc5 from "../../Images/maroc5.webp";
-import Maroc10 from "../../Images/maroc10.webp";
+import Kenya from "../../Images/kenya.webp";
 import Greece from "../../Images/greece.webp";
 import CostaRica from "../../Images/costa_rica.webp";
 
@@ -57,12 +58,15 @@ const TripBtn = styled(Link)`
     background-color: rgba(255, 255, 255, 0);
     font-size: 16px;
     cursor: pointer;
+    font-weight: bold;
     &:hover {
-        font-weight: bold;
+        animation: ${scale} 500ms both ease-in-out;
     }
 `;
 
 function TripSection () {
+
+    const date = new Date().toISOString();
 
     const path = useLocation().pathname;
 
@@ -71,25 +75,29 @@ function TripSection () {
             location: "MAROC",
             gps: "31.6258257,-7.9891608",
             duration: "Formule 5 jours",
-            image: Maroc5
+            image: Maroc5,
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales."
         },
         {
             location: "COSTA RICA",
             gps: "9.9325427,-84.0795782",
             duration: "Formule 10 jours",
-            image: CostaRica
+            image: CostaRica,
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales."
         },
         {
             location: "GRECE",
             gps: "37.9839412,23.7283052",
             duration: "Formule 10 jours",
-            image: Greece
+            image: Greece,
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales."
         },
         {
-            location: "MAROC",
-            gps: "31.6258257,-7.9891608",
+            location: "KENYA",
+            gps: "36.8166700,-1.2833300",
             duration: "Formule 10 jours",
-            image: Maroc10
+            image: Kenya,
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales."
         }
     ];
 
@@ -111,7 +119,7 @@ function TripSection () {
         return (
             <>
                 {items.map((item, index) => (
-                    <TripPageItem key={`${item.location}-${index}`} location={item.location} duration={item.duration} image={item.image} gps={item.gps} />
+                    <TripPageItem key={`${item.location}-${index}`} location={item.location} duration={item.duration} image={item.image} gps={item.gps} date={date} description={item.description} />
                 ))}
             </>  
         )

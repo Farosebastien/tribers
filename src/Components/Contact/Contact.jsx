@@ -4,16 +4,8 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import styled, { keyframes } from "styled-components";
-
-const rotate = keyframes`
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg) scale(1.1);
-    }
-`;
+import styled from "styled-components";
+import { rotate } from "../../utils/keyframes";
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
     padding: 10px;
@@ -21,7 +13,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
     cursor: pointer;
     color: #c5b56b;
     &:hover {
-        animation: ${rotate} 500ms ease-in-out;
+        animation: ${rotate} 1000ms ease-in-out;
     }
 `;
 

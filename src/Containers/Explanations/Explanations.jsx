@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import Explanation from "../Explanation/Explanation";
+import Explanation from "../../Components/Explanation/Explanation";
 import styled from "styled-components";
+import { scale } from "../../utils/keyframes";
 
 
 const ExplanationsLink = styled(Link)`
@@ -12,8 +13,9 @@ const ExplanationsLink = styled(Link)`
     font-size: 16px;
     color: #2c2c2c;
     background-color: white;
+    font-weight: bold;
     &:hover {
-        font-weight: bold;
+        animation: ${scale} 500ms both ease-in-out;
     }
 `;
 

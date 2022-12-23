@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import background_trip from "../../Images/background_trip.webp"
 import styled from "styled-components";
+import { scale } from "../../utils/keyframes";
 
 const RaceContainer = styled.aside`
     width: 50%;
@@ -47,8 +48,9 @@ const RaceLink = styled(Link)`
     color: white;
     font-size: 16px;
     cursor: pointer;
+    font-weight: bold;
     &:hover {
-        font-weight: bold;
+        animation: ${scale} 300ms both ease-in-out;
     }
 `
 

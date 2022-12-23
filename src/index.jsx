@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import MainPage from "./Containers/MainPage/MainPage";
-import TripsPage from "./Containers/TripsPage/TripsPage";
+import MainPage from "./Pages/MainPage/MainPage";
+import TripsPage from "./Pages/TripsPage/TripsPage";
 import { TokenProvider } from "./utils/tokenContext";
 import GlobalStyle from "./utils/GlobalStyle";
 import Header from "./Containers/Header/Header";

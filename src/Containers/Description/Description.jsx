@@ -1,4 +1,4 @@
-import Trips from "../../Components/Explanations/Explanations";
+import Trips from "../Explanations/Explanations";
 import Race from "../../Components/Race/Race";
 import styled from "styled-components";
 

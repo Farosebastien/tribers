@@ -4,7 +4,7 @@ import Contact from "../Contact/Contact";
 
 import "./Nav.css";
 
-const NavContainer = styled.div`
+const NavContainer = styled.nav`
     display: flex;
     margin-right: 50px;
 `;

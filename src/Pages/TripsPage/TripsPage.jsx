@@ -1,4 +1,4 @@
-import TripSection from "../TripSection/TripSection";
+import TripSection from "../../Containers/TripSection/TripSection";
 import styled from "styled-components";
 
 const TripsPageContainer = styled.div`

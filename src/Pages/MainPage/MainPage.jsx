@@ -1,5 +1,5 @@
-import Description from "../Description/Description";
-import TripSection from "../TripSection/TripSection";
+import Description from "../../Containers/Description/Description";
+import TripSection from "../../Containers/TripSection/TripSection";
 import styled from "styled-components";
 import background from "../../Images/background.webp";
 

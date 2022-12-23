@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from 'prop-types';
 
 const TripItemContainer = styled.div`
     display: flex;
@@ -25,14 +26,20 @@ const TripDuration = styled.p`
     font-weight: bold;
 `;
 
-function TripItem (props) {
+function TripItem ({ location, duration, image }) {
     return (
         <TripItemContainer>
-            <TripImg alt={`${props.location}-${props.duration}`} src={props.image} />
-            <TripLocation>{props.location}</TripLocation>
-            <TripDuration>{props.duration}</TripDuration>
+            <TripImg alt={`${location}-${duration}`} src={image} />
+            <TripLocation>{location}</TripLocation>
+            <TripDuration>{duration}</TripDuration>
         </TripItemContainer>
     );
+}
+
+TripItem.propTypes = {
+    location: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
 }
 
 export default TripItem;

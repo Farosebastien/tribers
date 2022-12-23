@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { scale } from "../../utils/keyframes";
 import styled from "styled-components";
 import Contact from "../../Components/Contact/Contact";
 import logo from "../../Images/logo.webp"
@@ -19,6 +20,7 @@ const FooterExplanations = styled.aside`
     flex-direction: column;
     justify-content: space-evenly;
     align-self: center;
+    
 `;
 
 const FooterTitle = styled.h2`
@@ -39,7 +41,7 @@ const FooterDescription = styled.p`
 const FooterBtn = styled(Link)`
     text-decoration: none;
     text-align: center;
-    align-self: center;
+    align-self: flex-end;
     width: 160px;
     border: none;
     border-bottom: 2px solid #C5B46B;
@@ -48,8 +50,9 @@ const FooterBtn = styled(Link)`
     color: white;
     font-size: 14px;
     cursor: pointer;
+    font-weight: bold;
     &:hover {
-        font-weight: bold;
+        animation: ${scale} 500ms both ease-in-out;
     }
 `;
 
@@ -57,9 +60,10 @@ const ContactContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-bottom: 20px;
 `;
 
-const ContactProductor = styled(Link)`
+const ContactProductor = styled.a`
     font-size: 14px;
     margin: 10px;
     align-self: center;
@@ -68,8 +72,9 @@ const ContactProductor = styled(Link)`
     text-decoration: none;
     border-bottom: 2px solid #C5B46B;
     color: white;
+    font-weight: bold;
     &:hover {
-        font-weight: bold;
+        animation: ${scale} 500ms both ease-in-out;
     }
 `;
 
@@ -91,7 +96,7 @@ function Footer () {
             </FooterExplanations>
             <ContactContainer>
                 <ContactLogo src={logo} alt="logo Tribers"/>
-                <ContactProductor to="www.lacustomagency.com">La Custom Agency - 2022</ContactProductor>
+                <ContactProductor href="https://www.lacustomagency.com">La Custom Agency - 2023</ContactProductor>
                 < Contact />
             </ContactContainer>
             <FooterExplanations>
