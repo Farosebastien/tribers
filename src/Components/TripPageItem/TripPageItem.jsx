@@ -53,16 +53,30 @@ const TripPhoto = styled.img`
 const TripDescription = styled.p`
     color: grey;
     font-size: 18px;
-    width: 80%;
+    width: 100%;
     align-self: center;
-    margin: 60px 0px 0px 0px;
+    margin: 60px 0px 0px 40px;
     text-align: justify;
 `;
 
+const TripWeather = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+`;
+
+const Weather = styled.p`
+    margin: 60px 0px 0px 10px;
+    font-size: 18px;
+    color: grey;
+`;
+
 function TripPageItem ({ date, gps, location, duration, image, description }) {
-    
+
+    let windSpeed = null;
+    let temperature = null;
     const { token, isLoading }  = useContext(TokenContext);
-    const [itemWeather, setItemWeather] = useState({});
+    const [itemWeather, setItemWeather] = useState();
     const [weatherLoading, setWeatherLoading] = useState(false);
 
     useEffect(() => {
@@ -84,6 +98,12 @@ function TripPageItem ({ date, gps, location, duration, image, description }) {
         }
     }, [isLoading, gps, token, date]);
 
+    if(itemWeather) {
+        windSpeed = itemWeather[1].coordinates[0].dates[0].value * 3.6;
+        windSpeed = Math.floor(windSpeed);
+        temperature = Math.ceil(itemWeather[0].coordinates[0].dates[0].value);
+    }
+
     return (
         <TripsContainer>
             <TripItemBox>
@@ -98,6 +118,10 @@ function TripPageItem ({ date, gps, location, duration, image, description }) {
                             <TripContent>
                                 <TripDuration>{duration}</TripDuration>
                                 <TripDescription>{description}</TripDescription>
+                                <TripWeather>
+                                    <Weather>Température locale 🌡️ : {temperature} °C</Weather>
+                                    <Weather>Vitesse du vent 🌬️: {windSpeed} km/h</Weather>
+                                </TripWeather>
                             </TripContent>
                         </>
                     )
