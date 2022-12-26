@@ -14,6 +14,7 @@ import styled from "styled-components";
     `
 
     const SignupTitle = styled.h1`
+        color: #c5b56b;
         font-size: 30px;
         text-align: center;
         margin: 100px 0px;

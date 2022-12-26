@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { LoginContext } from './loginContext';
 
 export function useToken() {
     const [token, setToken] = useState("");
@@ -25,4 +26,9 @@ export function useToken() {
     }, []);
 
     return { token, isLoading };
+}
+
+export function useLogin () {
+    const { isConnected, toggleConnected } = useContext(LoginContext);
+    return { isConnected, toggleConnected };
 }

@@ -3,6 +3,7 @@ import Race from "../../Components/Race/Race";
 import styled from "styled-components";
 
 const DescriptionContainer = styled.section`
+    margin-top: -300px;
     display: flex;
 `;
 

@@ -1,10 +1,21 @@
-import { useParams } from "react-router-dom";
+import { useLogin } from "../../utils/Hooks";
 
 function Logged () {
-    const { id } = useParams();
+
+    const { toggleConnected } = useLogin();
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+
+    const deconnection = () => {
+        toggleConnected();
+        localStorage.removeItem("userData");
+    }
 
     return (
-        <p>hello utilisateur n°{id}</p>
+        <div>
+            <p>hello utilisateur {userData.id}</p>
+            <button onClick={() => deconnection()}>Me déconnecter</button>
+        </div>
     )
 }
 

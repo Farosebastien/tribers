@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { scale } from "../../utils/keyframes";
 import { useState, useEffect } from "react";
 import { Loader } from "../../utils/loader";
+import { useLogin } from "../../utils/Hooks";
 
 const LoginBackground = styled.section`
     display: flex;
@@ -21,7 +22,7 @@ const BackgroundBlur = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 140px;
+    top: 170px;
     background: rgba(0, 0, 0, 0.3);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(4px);
@@ -119,13 +120,16 @@ const BlogBtn = styled.button`
 
 function Login() {
 
+    const { toggleConnected } = useLogin();
+    
+    const history = useNavigate();
+
     const [error, setError] = useState("");
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
 
-    const history = useNavigate();
 
     useEffect(() => {
         setIsLoading(true);
@@ -145,20 +149,20 @@ function Login() {
     }, []);
 
     const submitConnectionInfos = () => {
-
-        console.log({password, email})
+        localStorage.removeItem("userData");
         if(!isLoading) {
             if((password === "") && (email === "")) {
                 setError("Oups, un problème dans les identifiants!!");
             } else {
-                
-                console.log('entrée dans le map')
                 users.forEach((user) => {
                     if((email === user.email) && (password === user.password)){
+                        localStorage.setItem("userData", JSON.stringify({id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email, trips: user.trips}))
                         setError("");
-                        history(`/blog/user/${user.id}`);
+                        toggleConnected();
+                        history(`/blog`);
                     } else {
-                        setError("Oups, un problème dans les identifiants!!"); 
+                        
+                        setError("Oups, un problème dans les identifiants!!");
                     }
                 });
             } 
