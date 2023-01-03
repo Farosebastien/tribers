@@ -174,7 +174,7 @@ function Login() {
     return(
         <>
             <LoginBackground>
-                <BlogTitle>Bienvenue sur le blog</BlogTitle>
+                <BlogTitle>Bienvenue sur le blog des Tribers</BlogTitle>
                 <BlogLogo src={Logo} alt="logo de tribers" />
                 {isLoading ? (
                     <Loader/>
@@ -184,13 +184,13 @@ function Login() {
                             <BlogP>Vous êtes déjà un Tribers ? 🔒</BlogP>
                             <BlogLog>
                                 <BlogP>Email : </BlogP>
-                                <BlogIpt onChange={(e) => {
+                                <BlogIpt type={"email"} onChange={(e) => {
                                     setError("");
                                     setEmail(e.target.value);}}/>
                             </BlogLog>
                             <BlogLog>
                                 <BlogP>Mot de passe : </BlogP>
-                                <BlogIpt onChange={(e) => {
+                                <BlogIpt type={"password"} onChange={(e) => {
                                     setError("");
                                     setPassword(e.target.value);}}/>
                             </BlogLog>

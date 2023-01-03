@@ -1,7 +1,7 @@
 import NonActiveImage from "../../Images/non_active.webp";
 import styled from "styled-components";
 
-    const SignupContainer = styled.div`
+    const SignupContainer = styled.section`
         display: flex;
         flex-direction: column;
         justify-content: center;

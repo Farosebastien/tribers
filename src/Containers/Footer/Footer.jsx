@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Contact from "../../Components/Contact/Contact";
 import logo from "../../Images/logo.webp"
 
-const FooterContainer = styled.section`
+const FooterContainer = styled.footer`
     display: flex;
     justify-content: center;
     width: 100%;

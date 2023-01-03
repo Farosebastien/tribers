@@ -1,7 +1,7 @@
 import errorImage from "../../Images/404.svg";
 import styled from "styled-components";
 
-    const ErrorContainer = styled.div`
+    const ErrorContainer = styled.section`
         display: flex;
         flex-direction: column;
         justify-content: center;

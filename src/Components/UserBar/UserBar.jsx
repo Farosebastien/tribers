@@ -102,10 +102,9 @@ function UserBar () {
     const toggleMaximise = () => {
         setMaximise(!maximise);
     }
-    console.log(userData.trips)
 
     return(
-        <div>
+        <section>
             {!maximise ? 
             (
                 <DataContainer>
@@ -129,7 +128,7 @@ function UserBar () {
                     </DataBtnContainer>
                 </DataContainer>
             )}
-        </div>
+        </section>
     )
 
 }
