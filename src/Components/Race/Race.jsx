@@ -3,6 +3,7 @@ import background_trip from "../../Images/background_trip.webp"
 import styled from "styled-components";
 import { scale } from "../../utils/keyframes";
 
+//Création de styled-components
 const RaceContainer = styled.aside`
     width: 50%;
     height: 555px;
@@ -55,7 +56,7 @@ const RaceLink = styled(Link)`
 `
 
 function Race () {
-    
+    //Rendu du composant race qui affiche un aside sur la page d'accueil
     return(
         <RaceContainer>
             <RacePhoto>
@@ -74,4 +75,5 @@ function Race () {
     );
 }
 
+//Exportation du composant
 export default Race;

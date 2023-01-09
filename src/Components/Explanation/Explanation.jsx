@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
+//Création de styled-components
 const ExplanationList = styled.span`
     display: flex;
     margin: 10px 0px 0px 50px;
@@ -23,6 +24,7 @@ const ExplanationFontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 function Explanation (props) {
+    //Rendu du composant Explanation qui met en forme les props qui lui sont passées par son parent
     return (
         <ExplanationList>
             <ExplanationFontAwesomeIcon icon={faCheck}/>
@@ -32,4 +34,5 @@ function Explanation (props) {
     );
 }
 
+//Exportation du composant
 export default Explanation;

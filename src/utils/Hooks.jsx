@@ -9,7 +9,7 @@ export function useToken() {
         const getToken = () => {
             setIsLoading(true);
             let headers = new Headers();
-            headers.set('Authorization', 'Basic ' + btoa("lacustomagency_faro:0y5WU6nNAe"));
+            headers.set('Authorization', 'Basic ' + btoa(`${process.env.REACT_APP_METEO_API}`));
             fetch('https://login.meteomatics.com/api/v1/token', {
                 method: 'GET', headers: headers
             }).then(function (resp) {

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { PropTypes } from 'prop-types';
 
+//Création de styled-components
 const TripItemContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -27,6 +28,7 @@ const TripDuration = styled.p`
 `;
 
 function TripItem ({ location, duration, image }) {
+    //Rendu du composant tripItem qui affiche les différents voyages disponibles dans les props venant de son parent
     return (
         <TripItemContainer>
             <TripImg alt={`${location}-${duration}`} src={image} />
@@ -36,10 +38,12 @@ function TripItem ({ location, duration, image }) {
     );
 }
 
+//Prop-types qui sont toutes obligatoire et toutes des chaînes de caractères
 TripItem.propTypes = {
     location: PropTypes.string.isRequired,
     duration: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired
 }
 
+//Exportation du composant
 export default TripItem;

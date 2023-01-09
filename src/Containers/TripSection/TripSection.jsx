@@ -88,7 +88,7 @@ function TripSection () {
         {
             location: "GRECE",
             gps: "37.9839412,23.7283052",
-            duration: "Formule 10 jours",
+            duration: "Formule 5 jours",
             image: Greece,
             description: "Beauté et variété des paysages, richesse des vestiges historiques, climat doux, littoral et milliers d'îles paradisiaques, cuisine saine, infrastructures touristiques développées avec en prime un accueil chaleureux, voilà ce qui résume au mieux la Grèce. Elle est constituée d'une partie continentale et montagneuse au Nord, qui touche l'Albanie et la Bulgarie et dont le climat durcit au fur et à mesure que le relief monte (jusqu'à 2900 mètres au mont Olympe). La presqu'île du Péloponnèse, elle aussi montagneuse, ouvre ses quatre doigts vers le sud. Partout, le climat est doux et pluvieux l'hiver, chaud en été, avec des températures parfois caniculaires. Le printemps et l'automne sont donc les périodes les plus propices à un séjour agréable. Ce pays regorge de traces datant de l'âge du bronze, outils, armes ou vases, et vestiges en Crète, à Mycènes et Thessalonique. Évidemment, c'est un trésor de sanctuaires, temples et théâtres datant du siècle d'or grec (5e siècle avant JC). Outre l'Acropole d'Athènes, plusieurs autres sites archéologiques sont classés au patrimoine mondial par l'Unesco comme Aigai (aujourd'hui Vergina, ancienne capitale de la Macédoine), Olympie, Delphes ou le sanctuaire d'Asclépios à Epidaure. A Mistras, les traces de l'occupation byzantine ont laissé des ruines médiévales étonnantes. Les îles de Délos, Rhodes et Corfou valent le détour."
         },

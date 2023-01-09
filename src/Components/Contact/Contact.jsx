@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -7,6 +6,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { rotate } from "../../utils/keyframes";
 
+//Création de styled-components
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
     padding: 10px;
     margin: 0px 5px;
@@ -24,6 +24,7 @@ const ContactContainer = styled.div`
 
 
 function Contact () {
+    //Rendu du composant contact qui affiche les icones réseaux sociaux, téléphone et mail dans le header et le footer
     return (
         <ContactContainer>
             <StyledFontAwesomeIcon icon={faFacebookF}/>
@@ -34,4 +35,5 @@ function Contact () {
     );
 }
 
+//Exportation du composant
 export default Contact;

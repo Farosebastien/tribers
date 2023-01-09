@@ -31,6 +31,7 @@ function Routing () {
                 <Route path="/trips" element={<TripsPage />} />
                 <Route path="/values" element={<Values />} />
                 <Route path="/blog" element={<Blog/>} />
+                <Route path="/blog/signup" element={<Signup/>} />
                 <Route path="*" element={<Error />} />
             </Routes>
         )

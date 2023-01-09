@@ -132,8 +132,8 @@ function Login() {
 
 
     useEffect(() => {
-        setIsLoading(true);
         const getUsers = () => {
+            setIsLoading(true);
             fetch(`https://63a5c805f8f3f6d4abffbcce.mockapi.io/api/tribers/user`)
             .then(function (resp) {
                 return resp.json();
