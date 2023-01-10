@@ -1,6 +1,7 @@
 import NonActiveImage from "../../Images/non_active.webp";
 import styled from "styled-components";
 
+//Création de styled-components
     const SignupContainer = styled.section`
         display: flex;
         flex-direction: column;
@@ -22,6 +23,7 @@ import styled from "styled-components";
 
 function Signup () {
 
+    //Rendu du composant Signup qui explique que cette fonctionnalité n'est pas disponible sur ce site fictif
     return (
         <SignupContainer>
             <SignupTitle>Oups....</SignupTitle>
@@ -31,4 +33,5 @@ function Signup () {
     )
 }
 
+//Exportation du composant
 export default Signup;

@@ -8,11 +8,16 @@ import Error from "./Pages/ErrorPage/ErrorPage";
 import { useLogin } from "./utils/Hooks";
 import Blog from "./Containers/Blog/Blog";
 
+//Composant de Routing
 function Routing () {
+
+    //Variable routes qui contiendra les routes en fonction de l'état du booléen isConnected
     let routes = "";
 
+    //Récupération du booléen isConnected
     const { isConnected } = useLogin();
 
+    //Si il n'y a pas d'utilisateur connecté la route /blog envoie sur le composant Login
     if (!isConnected) {
         routes = (
             <Routes>
@@ -24,6 +29,7 @@ function Routing () {
                 <Route path="*" element={<Error />} />
             </Routes>
         )
+    //Si un utilisateur est connecté la route /blog envoie sur le composant Blog
     } else (
         routes = (
             <Routes>
@@ -37,7 +43,9 @@ function Routing () {
         )
     )
 
+    //Rendu du composant Routes
     return routes;
 }
 
+//Exportation du composant
 export default Routing

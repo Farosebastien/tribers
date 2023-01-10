@@ -3,6 +3,7 @@ import { useLogin } from "../../utils/Hooks";
 import generic from "../../Images/profile_generic.jpeg";
 import styled from "styled-components";
 
+//Création de styled-components
 const DataContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -55,12 +56,15 @@ const DataTripContent = styled.p`
 
 function UserBar () {
 
+    //Variables pour les voyages, l'utilisateur connecté et la userBar
     const [trips, setTrips] = useState("");
     const [maximise, setMaximise] = useState(false);
     const [userData, setUserData] = useState({});
 
+    //Récupération de la fonction toggleConnected pour le bouton de déconnection
     const { toggleConnected } = useLogin();
 
+    //Fonction d'affichage des voyages déjà effectués par l'utilisateur en fonction du tableau trips des données utilisateurs
     function getTrips(data) {
         let maroc = "";
         if(data.trips[0] === "1") {
@@ -82,27 +86,36 @@ function UserBar () {
         return trips;
     }
 
+    //UseEffect pour la récupération des données utilisateur
     useEffect(() => {
+        //Fonction de récupération des données dans le local storage
         const getUserData = async() => {
             const data = await JSON.parse(localStorage.getItem("userData"));
             return data;
         }
+        //Récupération des des données
         getUserData()
+        //Quand les données sont présentes
         .then((data) => {
+            //Appels des fonctions de mise à jour du state de UserData et Trips en appelant getTrips
             setUserData(data);
             setTrips(getTrips(data));
         })
     }, []);
 
+    //Fonction de déconnection 
     const deconnection = () => {
+        //Utilisation de toggleConnected et vidage du local storage
         toggleConnected();
         localStorage.removeItem("userData");
     }
 
+    //Fonction de gestion de la barre utilisateur qui inverse la valeur de maximise à chaque appel
     const toggleMaximise = () => {
         setMaximise(!maximise);
     }
 
+    //Rendu du composant UserBar qui affiche en fonction de la variable maximise, un message de bienvenue avec le nom de l'utilisateur ou ses données complètes
     return(
         <section>
             {!maximise ? 
@@ -133,4 +146,5 @@ function UserBar () {
 
 }
 
+//Exportation du composant
 export default UserBar;

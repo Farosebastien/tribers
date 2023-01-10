@@ -1,5 +1,6 @@
 import { keyframes } from "styled-components";
 
+//Exportation d'un keyframes pour les icones du composant Contact
 export const rotate = keyframes`
     0% {
         transform: rotate(0deg);
@@ -12,6 +13,7 @@ export const rotate = keyframes`
     }
 `;
 
+//Exportation d'un keyframes pour le grossissement des boutons au hover
 export const scale = keyframes`
     from {
         transform: scale(1);
@@ -21,6 +23,7 @@ export const scale = keyframes`
     }
 `;
 
+//Exportation d'un keyframes pour le loader
 export const rotateLoader = keyframes`
     0% {
         transform: rotate(0deg);

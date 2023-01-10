@@ -10,6 +10,7 @@ import Kenya from "../../Images/kenya.webp";
 import Greece from "../../Images/greece.webp";
 import CostaRica from "../../Images/costa_rica.webp";
 
+//Création de styled-components
 const TripContainer = styled.section`
     display: flex;
     flex-direction: column;
@@ -66,10 +67,13 @@ const TripBtn = styled(Link)`
 
 function TripSection () {
 
+    //Récupération de la date actuelle
     const date = new Date().toISOString();
 
+    //Récupération de la location de l'utilisateur
     const path = useLocation().pathname;
 
+    //Tableau d'objets qui contient les données de chaque voyage
     const items = [
         {
             location: "MAROC",
@@ -101,7 +105,9 @@ function TripSection () {
         }
     ];
 
+    //Si l'utilisateur se trouve sur la page d'accueil
     if (path === "/") {
+        //Rendu du composant TripSection en itérant sur chaque voyage avec et en envoyant les données de chaque voyage en props au composant TripItem
         return (
             <TripContainer>
                 <TripFontAwesomeIcon icon={faVuejs} />
@@ -115,7 +121,9 @@ function TripSection () {
                 <TripBtn to="/trips">Tous les voyages</TripBtn>
             </TripContainer>
         )
+    //Si l'utilisateur se trouve sur la page des voyages
     } else if (path === "/trips") {
+        //Rendu du composant TripSection en itérant sur chaque voyage avec et en envoyant les données de chaque voyage en props au composant TripPageItem
         return (
             <>
                 {items.map((item, index) => (
@@ -126,4 +134,5 @@ function TripSection () {
     }
 }
 
+//Exportation du composant
 export default TripSection;

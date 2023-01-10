@@ -8,6 +8,8 @@ import GlobalStyle from "./utils/GlobalStyle";
 import Header from "./Containers/Header/Header";
 import Footer from "./Containers/Footer/Footer";
 
+/*Fichier principale de l'application qui lance le router, les providers, un GlobalStyle
+et affiche pour chaque route le Header et le Footer en ciblant l'id "root" de la page index.html*/
 const root = createRoot(document.getElementById("root"));
 const app = (
   <BrowserRouter>
@@ -22,4 +24,5 @@ const app = (
   </BrowserRouter>
 );
 
+//Rendu de l'app
 root.render(app);

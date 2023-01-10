@@ -3,6 +3,7 @@ import TripSection from "../../Containers/TripSection/TripSection";
 import styled from "styled-components";
 import background from "../../Images/background.webp";
 
+//Création de styled-components
 const MainPageContainer = styled.div`
     margin: 0px;
 `;
@@ -14,6 +15,7 @@ const MainPageImg = styled.img`
 
 function MainPage () {
 
+    //Rendu du composant MainPage qui affiche la page d'accueil du site avec les composants Description et TripSection
     return (
         <MainPageContainer>
             <MainPageImg src={background} alt="image de voyageurs" />
@@ -23,4 +25,5 @@ function MainPage () {
     );
 }
 
+//Exportation du composant
 export default MainPage;

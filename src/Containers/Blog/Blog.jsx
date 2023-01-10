@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Loader } from "../../utils/loader";
 
-
+//Création de styled-components
 const BlogContainer = styled.section`
     margin: 0;
     display: flex;
@@ -58,54 +58,75 @@ const PostContent = styled.div`
 
 function Blog () {
 
+    //Récupération des données de l'utilisateur courant dans le local storage
     const currentUser = JSON.parse(localStorage.getItem("userData"));
+    //Variable du state
     const [users, setUsers] = useState([]);
     const [posts, setPosts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
 
+    //UseEffect pour la récupération des utilisateurs et des posts
     useEffect(() => {
+        //Fonction de récupération des utilisateurs
         const getUsers = () => {
+            //Mise du booléen de chargement à true
             setIsLoading(true);
-            fetch(`https://63a5c805f8f3f6d4abffbcce.mockapi.io/api/tribers/user`)
+            //Requête à la mockAPI
+            fetch(`${process.env.REACT_APP_MOCKAPI}user`)
+            //Quand on a la réponse, on la retourne
             .then(function (resp) {
                 return resp.json();
+            //Ensuite, on l'envoie dans le state et on met le booléen de chargement a false
             }).then(function (data) {
                 setUsers(data);
                 setIsLoading(false);
+            //Si il y a une erreur, on la log et on l'indique avec la variable error du state
             }).catch(function (err) {
                 console.log( err);
                 setError("Oups, une erreur est survenue à la récupération des utilisateurs!!!!")
             });
         }
+        //Fonction de récupération des posts
         const getPosts = () => {
+            //Mise du booléen de chargement à true
             setIsLoading(true);
-            fetch(`https://63a5c805f8f3f6d4abffbcce.mockapi.io/api/tribers/posts`)
+            //Requête à la mockAPI
+            fetch(`${process.env.REACT_APP_MOCKAPI}posts`)
+            //Quand on a la réponse, on la retourne
             .then(function (resp) {
                 return resp.json();
+            //Ensuite, on l'envoie dans le state et on met le booléen de chargement a false
             }).then(function (data) {
                 setPosts(data);
                 setIsLoading(false);
+            //Si il y a une erreur, on la log et on l'indique avec la variable error du state
             }).catch(function (err) {
                 console.log( err);
                 setError("Oups, une erreur est survenue à la récupération des posts!!")
             });
         }
+        //Appel des fonction de récupération des posts et des utilisateurs
         getUsers();
         getPosts();
     }, []);
 
+    //Pour chaque post
     posts.forEach((post) => {
+        //On cherche dans les utilisateurs, celui qui a le même id que l'auteur du post
         for(const user of users) {
+            //Quand on l'a trouvé on mets la variables name de chaque post à jour
             if (post.userId === user.id) {
                 post.name = `${user.firstName + " " + user.lastName}`;
             }
         }
+        //Si l'auteur du post est l'utilisateur courant on met juste le nom à "vous"
         if (post.userId === currentUser.id) {
             post.name = "Vous";
         }
     })
 
+    //Si il y a eu une erreur, on l'affiche
     if (error !== "") {
         return (
             <BlogContainer>
@@ -113,7 +134,7 @@ function Blog () {
             </BlogContainer>
         )
     }
-
+    //Rendu du composant Blog en affichant un loader si on est en chargement et sinon on affiche chaque post avec le nom de l'auteur, la date de post et le contenu du post
     return (
         <BlogContainer>
             {isLoading ? (
@@ -137,4 +158,5 @@ function Blog () {
     )
 }
 
+//Exportation du composant
 export default Blog;

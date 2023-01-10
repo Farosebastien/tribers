@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Contact from "../../Components/Contact/Contact";
 import logo from "../../Images/logo.webp"
 
+//Création de styled-components
 const FooterContainer = styled.footer`
     display: flex;
     justify-content: center;
@@ -87,6 +88,7 @@ const ContactLogo = styled.img`
 
 function Footer () {
 
+    //Rendu du composant Footer
     return (
         <FooterContainer>
             <FooterExplanations>
@@ -108,4 +110,5 @@ function Footer () {
     )
 }
 
+//Exportation du comosant
 export default Footer;

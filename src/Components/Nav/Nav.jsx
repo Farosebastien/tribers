@@ -56,7 +56,7 @@ function Nav () {
     }
 
     return(
-        //Rendu du composant nav qui affiche les liens de navigations de chaque page de l'application ainsi qu'une bordure sous le lien de la page actuelle
+        //Rendu du composant nav qui affiche les liens de navigations de chaque page de l'application ainsi qu'une bordure sous le lien de la page actuelle et le composant Contact
         <NavContainer>
             <NavBar>
                 <NavLink className={conceptActive} to="/">CONCEPT</NavLink>

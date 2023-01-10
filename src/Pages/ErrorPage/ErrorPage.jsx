@@ -1,6 +1,7 @@
 import errorImage from "../../Images/404.svg";
 import styled from "styled-components";
 
+//Création de styled-components
     const ErrorContainer = styled.section`
         display: flex;
         flex-direction: column;
@@ -21,6 +22,7 @@ import styled from "styled-components";
 
 function Error () {
 
+    //Rendu du composant Error qui indique que la page demandée n'existe pas
     return (
         <ErrorContainer>
             <ErrorTitle>Oups....</ErrorTitle>
@@ -30,4 +32,5 @@ function Error () {
     )
 }
 
+//Exportation du composant
 export default Error;

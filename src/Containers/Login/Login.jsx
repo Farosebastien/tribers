@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Loader } from "../../utils/loader";
 import { useLogin } from "../../utils/Hooks";
 
+//Création de styled-components
 const LoginBackground = styled.section`
     display: flex;
     flex-direction: column;
@@ -120,48 +121,68 @@ const BlogBtn = styled.button`
 
 function Login() {
 
+    //Récupération de la fonction toggleConnected
     const { toggleConnected } = useLogin();
     
+    //Variable history pour la navigation
     const history = useNavigate();
 
+    //Variables du state
     const [error, setError] = useState("");
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
 
-
+    //UseEffect pour la récupération des utilisateurs de la base de données
     useEffect(() => {
+        //Fonction de récupération avec fetch
         const getUsers = () => {
+            //Mise du booléen de chargement à true
             setIsLoading(true);
-            fetch(`https://63a5c805f8f3f6d4abffbcce.mockapi.io/api/tribers/user`)
+            //Fetch à la mock API
+            fetch(`${process.env.REACT_APP_MOCKAPI}user`)
+            //Quand on a la réponse, on la retourne
             .then(function (resp) {
                 return resp.json();
+            //Avec ces données on appelle les fonction de mise à jour du state pour Users avec les données et du booléen de chargement à false
             }).then(function (data) {
                 setUsers(data);
                 setIsLoading(false);
+            //Si on a une erreur à la récupération, on la log et on met à jour la variable du state error
             }).catch(function (err) {
                 console.log( err);
                 setError("Oups, une erreur est survenue!!")
             });
         }
+        //Appel de la fonction de récupération des utilisateurs
         getUsers();
     }, []);
 
+    //Fonction de soumission des informations de connection email et mot de passe
     const submitConnectionInfos = () => {
+        //Vidage du local storage au cas où des infos y soient encore
         localStorage.removeItem("userData");
+        //Si on est plus en récupération des infos
         if(!isLoading) {
+            //Si on a pas d'entrées dans email et mot de passe
             if((password === "") && (email === "")) {
+                //On met à jour une erreur
                 setError("Oups, un problème dans les identifiants!!");
+            //Sinon
             } else {
+                //Sur chaque utilisateur
                 users.forEach((user) => {
+                    //Comparaison du mot de passe et de l'email de connection pour trouver l'utilisateur
                     if((email === user.email) && (password === user.password)){
+                        //Stockage de ses données dans le local storage
                         localStorage.setItem("userData", JSON.stringify({id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email, trips: user.trips}))
+                        //Vidage de l'erreur, mise à jour du booléen isConnected avec toggleConnected et envoi de l'utilisateur sur la page du blog
                         setError("");
                         toggleConnected();
                         history(`/blog`);
+                    //Si les entrées ne correspondent à aucun utilisateur de la mock API on l'indique dans l'erreur
                     } else {
-                        
                         setError("Oups, un problème dans les identifiants!!");
                     }
                 });
@@ -169,8 +190,7 @@ function Login() {
         }
     }
 
-    
-
+    //Rendu du composant Login qui si on est en chargement, affiche un loader et une fois le chargement effectué affiche les inputs pour les connections
     return(
         <>
             <LoginBackground>
@@ -210,4 +230,5 @@ function Login() {
     )
 }
 
+//Exportation du composant
 export default Login;

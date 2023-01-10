@@ -3,7 +3,7 @@ import Explanation from "../../Components/Explanation/Explanation";
 import styled from "styled-components";
 import { scale } from "../../utils/keyframes";
 
-
+//Création de styled-components
 const ExplanationsLink = styled(Link)`
     text-decoration: none;
     cursor: pointer;
@@ -49,6 +49,7 @@ const ExplanationsP = styled.p`
 
 function Explanations () {
 
+    //Tableau d'objets comportant les explications de base du concept Tribers
     const lists = [
         {
             title: "Participez",
@@ -64,6 +65,7 @@ function Explanations () {
         }
     ];
 
+    //Rendu du composant qui affiche un texte et qui pour chaque explication du tableau, appel le composant Explanation en lui envoyant les données de chaque objet en props
     return (
         <ExplanationsContainer>
             <ExplanationsName>TRIBERS</ExplanationsName>
@@ -78,4 +80,5 @@ function Explanations () {
     );
 }
 
+//Exportation du composant
 export default Explanations;

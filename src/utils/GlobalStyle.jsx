@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+//Création d'un StyledGlobalStyle
 const StyledGlobalStyle = createGlobalStyle`
     body {
     margin: 0;
@@ -8,7 +9,9 @@ const StyledGlobalStyle = createGlobalStyle`
 `;
 
 function GlobalStyle () {
+    //Rendu du composant GlobalStyle en utilisant le StyledGlobalStyle
     return <StyledGlobalStyle />
 };
 
+//Exportation du composant
 export default GlobalStyle;

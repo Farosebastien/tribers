@@ -4,6 +4,7 @@ import styled from "styled-components";
 import UserBar from "../../Components/UserBar/UserBar";
 import { useLogin } from "../../utils/Hooks";
 
+//Création de styled-components
 const HeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
@@ -18,9 +19,10 @@ const LogoImg = styled.img`
 
 function Header () {
 
+    //Récupération du booléen isConnected
     const { isConnected } = useLogin();
 
-
+    //Rendu du composant header qui affiche le logo, le composant Nav et si l'utilisateur est connecté, sa UserBar
     return (
         <>
             <HeaderContainer>
@@ -33,4 +35,5 @@ function Header () {
     );
 }
 
+//Exportation du composant
 export default Header;
