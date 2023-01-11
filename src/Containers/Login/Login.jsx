@@ -6,6 +6,7 @@ import { scale } from "../../utils/keyframes";
 import { useState, useEffect } from "react";
 import { Loader } from "../../utils/loader";
 import { useLogin } from "../../utils/Hooks";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const LoginBackground = styled.section`
@@ -14,7 +15,7 @@ const LoginBackground = styled.section`
     justify-content: center;
     align-items: center;
     height: 90vh;
-    background: rgb(0, 0, 0) url(${Background}) center no-repeat;
+    background: ${colors.blackBackground} url(${Background}) center no-repeat;
     background-size: cover;
     resize: both;
 `;
@@ -24,7 +25,7 @@ const BackgroundBlur = styled.div`
     width: 100%;
     height: 100%;
     top: 170px;
-    background: rgba(0, 0, 0, 0.3);
+    background: ${colors.blurBackground};
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(4px);
     height: 90vh;
@@ -32,7 +33,7 @@ const BackgroundBlur = styled.div`
 
 const BlogTitle = styled.h1`
     z-index: 1;
-    color: white;
+    color: ${colors.white};
     font-size: 30px;
     margin-bottom: 50px;
 `;
@@ -62,14 +63,14 @@ const BlogLog = styled.div`
 
 const BlogP = styled.p`
     z-index: 1;
-    color: white;
+    color: ${colors.white};
     font-size: 16px;
     margin: 20px 0px;
 `;
 
 const BlogError = styled.p`
     z-index: 1;
-    color: white;
+    color: ${colors.white};
     font-size: 16px;
     margin: 20px 0px;
 `;
@@ -81,10 +82,10 @@ const BlogLink = styled(Link)`
     align-self: center;
     width: 100px;
     border: none;
-    border-bottom: 2px solid #C5B46B;
-    background-color: rgba( 255, 255, 255, 0);
+    border-bottom: 2px solid ${colors.primary};
+    background-color: ${colors.whiteBackground};
     margin: 0px 0px 50px 0px;
-    color: white;
+    color: ${colors.white};
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;
@@ -107,10 +108,10 @@ const BlogBtn = styled.button`
     align-self: center;
     width: 140px;
     border: none;
-    border-bottom: 2px solid #C5B46B;
-    background-color: rgba( 255, 255, 255, 0);
+    border-bottom: 2px solid ${colors.primary};
+    background-color: ${colors.whiteBackground};
     margin: 0px 0px 10px 0px;
-    color: white;
+    color: ${colors.white};
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;

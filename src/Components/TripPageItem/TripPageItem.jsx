@@ -6,6 +6,7 @@ import { scale } from "../../utils/keyframes";
 import { Loader } from './../../utils/loader';
 import styled from "styled-components";
 import { PropTypes } from 'prop-types';
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const TripsContainer = styled.div`
@@ -32,7 +33,7 @@ const TripLeft = styled.aside`
 const TripTitle = styled.h2`
     font-size: 26px;
     font-weight: bold;
-    color: grey;
+    color: ${colors.grey};
     margin-bottom: 20px;
 `;
 
@@ -54,7 +55,7 @@ const TripPhoto = styled.img`
 `;
 
 const TripDescription = styled.p`
-    color: grey;
+    color: ${colors.grey};
     font-size: 18px;
     width: 100%;
     align-self: center;
@@ -71,7 +72,7 @@ const TripWeather = styled.div`
 const Weather = styled.p`
     margin: 60px 0px 0px 10px;
     font-size: 18px;
-    color: grey;
+    color: ${colors.grey};
 `;
 
 const TripLink = styled(Link)`
@@ -80,10 +81,10 @@ const TripLink = styled(Link)`
     align-self: flex-end;
     width: 80px;
     border: none;
-    border-bottom: 2px solid #C5B46B;
-    background-color: rgba( 255, 255, 255, 0);
+    border-bottom: 2px solid ${colors.primary};
+    background-color: ${colors.whiteBackground};
     margin: 0px 20px;
-    color: grey;
+    color: ${colors.grey};
     font-size: 18px;
     cursor: pointer;
     &:hover {

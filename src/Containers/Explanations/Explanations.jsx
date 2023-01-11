@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 import Explanation from "../../Components/Explanation/Explanation";
 import styled from "styled-components";
 import { scale } from "../../utils/keyframes";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const ExplanationsLink = styled(Link)`
     text-decoration: none;
     cursor: pointer;
     border: none;
-    border-bottom: 2px solid #C5B46B;
+    border-bottom: 2px solid ${colors.primary};
     margin: 40px 50px ;
     font-size: 16px;
-    color: #2c2c2c;
-    background-color: white;
+    color: ${colors.blackBackground};
+    background-color: ${colors.white};
     font-weight: bold;
     &:hover {
         animation: ${scale} 500ms both ease-in-out;
@@ -22,7 +23,7 @@ const ExplanationsLink = styled(Link)`
 const ExplanationsContainer = styled.aside`
     width: 50%;
     height: 650px;
-    background-color: white;
+    background-color: ${colors.white};
     margin-top: -100px;
     display: flex;
     flex-direction: column;
@@ -31,7 +32,7 @@ const ExplanationsContainer = styled.aside`
 
 const ExplanationsName = styled.p`
     margin: 40px 0px 0px 50px;
-    color: #C5B46B;
+    color: ${colors.primary};
 `;
 
 const ExplanationsTitle = styled.h1`

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import background_trip from "../../Images/background_trip.webp"
 import styled from "styled-components";
 import { scale } from "../../utils/keyframes";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const RaceContainer = styled.aside`
@@ -17,7 +18,7 @@ const RaceContainer = styled.aside`
 
 const RaceRed = styled.div`
     width: 50%;
-    background-color: rgba(165, 40, 40, 0.8);
+    background-color: ${colors.redBackground};
 `;
 
 const RacePhoto = styled.div`
@@ -34,7 +35,7 @@ const RaceTitleContainer = styled.div`
 
 const RaceTitle = styled.h2`
     text-align: left;
-    color: white;
+    color: ${colors.white};
     margin-left: 20px;
     width: 220px;
     font-size: 30px;
@@ -43,10 +44,10 @@ const RaceTitle = styled.h2`
 const RaceLink = styled(Link)`
     text-decoration: none;
     border: none;
-    border-bottom: 2px solid #C5B46B;
-    background-color: rgba( 255, 255, 255, 0);
+    border-bottom: 2px solid ${colors.primary};
+    background-color: ${colors.whiteBackground};
     margin-left: 20px;
-    color: white;
+    color: ${colors.white};
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;

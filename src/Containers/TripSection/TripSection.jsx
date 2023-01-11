@@ -9,12 +9,13 @@ import Maroc5 from "../../Images/maroc5.webp";
 import Kenya from "../../Images/kenya.webp";
 import Greece from "../../Images/greece.webp";
 import CostaRica from "../../Images/costa_rica.webp";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const TripContainer = styled.section`
     display: flex;
     flex-direction: column;
-    background-color: rgba(197, 180, 107, 0.3);
+    background-color: ${colors.goldBackground};
 `;
 
 const TripFontAwesomeIcon = styled(FontAwesomeIcon)`
@@ -22,11 +23,11 @@ const TripFontAwesomeIcon = styled(FontAwesomeIcon)`
     margin: 30px 0px 20px 30px;
     width: 120px;
     height: 150px;
-    color: rgba(197, 180, 107, 0.5);
+    color: ${colors.goldBackground};
 `;
 
 const TripTitle = styled.h2`
-    color: #C5B46B;
+    color: ${colors.primary};
     align-self: flex-start;
     margin: -150px 0px 20px 50px;
     font-size: 30px;
@@ -34,7 +35,7 @@ const TripTitle = styled.h2`
 `;
 
 const TripTitleSuite = styled.h3`
-    color: #C5B46B;
+    color: ${colors.primary};
     align-self: flex-start;
     margin: -20px 0px 20px 50px;
     font-size: 24px;
@@ -54,9 +55,9 @@ const TripBtn = styled(Link)`
     align-self: center;
     margin: 10px 0px 60px 0px;
     border: none;
-    color: black;
-    border-bottom: 2px solid #C5B46B;
-    background-color: rgba(255, 255, 255, 0);
+    color: ${colors.blackBackground};
+    border-bottom: 2px solid ${colors.primary};
+    background-color: ${colors.whiteBackground};
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;

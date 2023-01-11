@@ -2,6 +2,7 @@ import Background from "../../Images/background_blogsection.webp";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Loader } from "../../utils/loader";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const BlogContainer = styled.section`
@@ -14,7 +15,7 @@ const BlogContainer = styled.section`
 const BlogTitle = styled.h1`
     z-index: 1;
     font-size: 60px;
-    color: #c5b56b;
+    color: ${colors.primary};
     text-align: center;
     margin-top: 180px;
 `;
@@ -30,7 +31,7 @@ const PostContainer = styled.div`
     height: auto;
     display: flex;
     flex-direction: column;
-    border: 2px solid #c5b56b;
+    border: 2px solid ${colors.primary};
     border-radius: 20px ;
     margin: 40px 0;
 `;
@@ -42,13 +43,13 @@ const PostHeader = styled.div`
 
 const PostAuthor = styled.span`
     margin: 10px 0;
-    border-bottom: 2px solid #c5b56b;
+    border-bottom: 2px solid ${colors.primary};
 `;
 
 const PostDate = styled.span`
     margin: 10px 0;
-    color: grey;
-    border-bottom: 2px solid #c5b56b;
+    color: ${colors.grey};
+    border-bottom: 2px solid ${colors.primary};
 `;
 
 const PostContent = styled.div`

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLogin } from "../../utils/Hooks";
 import generic from "../../Images/profile_generic.jpeg";
 import styled from "styled-components";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const DataContainer = styled.div`
@@ -11,13 +12,13 @@ const DataContainer = styled.div`
 `;
 
 const DataBtn = styled.button`
-    color: white;
+    color: ${colors.white};
     text-decoration: none;
     text-align: center;
     align-self: center;
     width: 160px;
     border: none;
-    background-color: #c5b56b;
+    background-color: ${colors.primary};
     margin-bottom: 20px;
     font-size: 14px;
     cursor: pointer;
@@ -29,13 +30,13 @@ const DataImg = styled.img`
 `;
 
 const DataContent = styled.p`
-    color: #c5b56b;
+    color: ${colors.primary};
     font-weight: bold;
     margin: 0px 0px 20px 0px;
 `;
 
 const DataEmail = styled.p`
-    color: #c5b56b;
+    color: ${colors.primary};
     margin: 20px 0px 0px 0px;
 `;
 

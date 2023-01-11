@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 import { scale } from "../../utils/keyframes";
 import styled from "styled-components";
 import Contact from "../../Components/Contact/Contact";
-import logo from "../../Images/logo.webp"
+import logo from "../../Images/logo.webp";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const FooterContainer = styled.footer`
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: rgb(156, 153, 123);
+    background-color: ${colors.footerBackground};
     justify-content: space-around;
 `;
 
@@ -26,7 +27,7 @@ const FooterExplanations = styled.aside`
 
 const FooterTitle = styled.h2`
     margin: 0px;
-    color: white;
+    color: ${colors.white};
     font-size: 18px;
     justify-content: center;
 `;
@@ -36,7 +37,7 @@ const FooterDescription = styled.p`
     margin: 0px;
     font-size: 14px;
     align-self: center;
-    color: white;
+    color: ${colors.white};
 `;
 
 const FooterBtn = styled(Link)`
@@ -45,10 +46,10 @@ const FooterBtn = styled(Link)`
     align-self: flex-end;
     width: 160px;
     border: none;
-    border-bottom: 2px solid #C5B46B;
-    background-color: rgba( 255, 255, 255, 0);
+    border-bottom: 2px solid ${colors.primary};
+    background-color: ${colors.whiteBackground};
     margin: 0px 20px;
-    color: white;
+    color: ${colors.white};
     font-size: 14px;
     cursor: pointer;
     font-weight: bold;
@@ -71,8 +72,8 @@ const ContactProductor = styled.a`
     height: 25px;
     max-width: 200px;
     text-decoration: none;
-    border-bottom: 2px solid #C5B46B;
-    color: white;
+    border-bottom: 2px solid ${colors.primary};
+    color: ${colors.white};
     font-weight: bold;
     &:hover {
         animation: ${scale} 500ms both ease-in-out;

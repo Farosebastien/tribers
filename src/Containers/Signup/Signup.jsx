@@ -1,5 +1,6 @@
 import NonActiveImage from "../../Images/non_active.webp";
 import styled from "styled-components";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
     const SignupContainer = styled.section`
@@ -15,7 +16,7 @@ import styled from "styled-components";
     `
 
     const SignupTitle = styled.h1`
-        color: #c5b56b;
+        color: ${colors.primary};
         font-size: 30px;
         text-align: center;
         margin: 100px 0px;

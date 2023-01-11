@@ -1,6 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 import Contact from "../Contact/Contact";
+import colors from "../../utils/Colors";
 
 import "./Nav.css";
 
@@ -15,11 +16,11 @@ const NavBar = styled.div`
 `;
 
 const NavLink = styled(Link)`
-    color: grey;
+    color: ${colors.grey};
     text-decoration: none;
     margin: 0px 10px;
     font-family: 'lato';
-    background-color: rgba(255, 255, 255, 0);
+    background-color: ${colors.whiteBackground};
     cursor: pointer;
     &:hover {
         font-weight: bold;

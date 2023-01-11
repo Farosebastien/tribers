@@ -15,7 +15,7 @@ const LogoImg = styled.img`
     width: 150px;
     height: 150px;
     margin: 10px 10px 10px 100px;
-`
+`;
 
 function Header () {
 

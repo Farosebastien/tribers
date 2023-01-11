@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { PropTypes } from 'prop-types';
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const TripItemContainer = styled.div`
@@ -16,14 +17,14 @@ const TripImg = styled.img`
 const TripLocation = styled.p`
     align-self: flex-start;
     margin: -50px 0px 0px 10px;
-    color: white;
+    color: ${colors.white};
     font-weight: bold;
 `;
 
 const TripDuration = styled.p`
     align-self: flex-start;
     margin: 5px 0px 0px 10px;
-    color: white;
+    color: ${colors.white};
     font-weight: bold;
 `;
 

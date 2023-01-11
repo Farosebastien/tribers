@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import colors from "../../utils/Colors";
 
 //Création de styled-components
 const ExplanationList = styled.span`
@@ -20,7 +21,7 @@ const ExplanationContent = styled.p`
 
 const ExplanationFontAwesomeIcon = styled(FontAwesomeIcon)`
     width: 10px;
-    color: #C5B46B;
+    color: ${colors.primary};
 `;
 
 function Explanation (props) {
