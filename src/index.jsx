@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import { TokenProvider } from "./utils/tokenContext";
 import { LoginProvider } from "./utils/loginContext";
@@ -12,7 +12,7 @@ import Footer from "./Containers/Footer/Footer";
 et affiche pour chaque route le Header et le Footer en ciblant l'id "root" de la page index.html*/
 const root = createRoot(document.getElementById("root"));
 const app = (
-  <BrowserRouter>
+  <HashRouter>
       <TokenProvider>
         <LoginProvider>
           <GlobalStyle />
@@ -21,7 +21,7 @@ const app = (
           <Footer />
         </LoginProvider>  
       </TokenProvider>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 //Rendu de l'app
