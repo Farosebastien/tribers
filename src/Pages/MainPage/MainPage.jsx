@@ -1,7 +1,7 @@
 import Description from "../../Containers/Description/Description";
 import TripSection from "../../Containers/TripSection/TripSection";
 import styled from "styled-components";
-import background from "../../Images/background.webp";
+import background from "../../Images/background_net.webp";
 
 //Création de styled-components
 const MainPageContainer = styled.div`

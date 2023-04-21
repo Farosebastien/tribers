@@ -44,6 +44,11 @@ const DataBtnContainer = styled.div`
     display: flex;
     justify-content: space-between;
     width: 400px;
+    @media (max-width: 500px) {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const DataTripTitle = styled.h3`
@@ -107,7 +112,7 @@ function UserBar () {
     //Fonction de déconnection 
     const deconnection = () => {
         //Utilisation de toggleConnected et vidage du local storage
-        toggleConnected();
+        toggleConnected(false);
         localStorage.removeItem("userData");
     }
 

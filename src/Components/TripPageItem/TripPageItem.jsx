@@ -17,17 +17,22 @@ const TripsContainer = styled.div`
 
 const TripItemBox = styled.div`
     display: flex;
-    justify-content: ${({weatherLoading}) => (weatherLoading ?  'center' : 'space-around')};
+    justify-content: ${({weatherLoading}) => (weatherLoading ? 'center' : 'space-around')};
     min-height: 200px;
     width: 80%;
     margin: 40px 0px;
+    @media (max-width: 1205px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const TripLeft = styled.aside`
     display: flex;
     flex-Direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
 `;
 
 const TripTitle = styled.h2`
@@ -52,6 +57,15 @@ const TripContent = styled.aside`
 const TripPhoto = styled.img`
     width: 355px;
     height: 350px;
+    @media (min-width: 771px) and (max-width: 1205px) {
+        object-fit: cover;
+        height: 350px;
+        width: 80%;
+    }
+    @media (max-width: 770px) {
+        width: 300px;
+        height: 300px;
+    }
 `;
 
 const TripDescription = styled.p`
@@ -61,18 +75,30 @@ const TripDescription = styled.p`
     align-self: center;
     margin: 60px 0px 0px 40px;
     text-align: justify;
+    @media (max-width: 1205px) {
+        margin: 60px 0px 0px 0px;
+    }
 `;
 
 const TripWeather = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    @media (max-width: 770px) {
+        margin-top: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 const Weather = styled.p`
     margin: 60px 0px 0px 10px;
     font-size: 18px;
     color: ${colors.grey};
+    @media (max-width: 770px) {
+        margin: 20px;
+    }
 `;
 
 const TripLink = styled(Link)`
@@ -89,6 +115,9 @@ const TripLink = styled(Link)`
     cursor: pointer;
     &:hover {
         animation: ${scale} 500ms both ease-in-out;
+    }
+    @media (max-width: 770px) {
+        align-self: center;
     }
 `;
 

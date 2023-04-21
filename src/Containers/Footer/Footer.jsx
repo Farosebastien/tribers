@@ -12,6 +12,9 @@ const FooterContainer = styled.footer`
     width: 100%;
     background-color: ${colors.footerBackground};
     justify-content: space-around;
+    @media(max-width: 700px) {
+        flex-direction: column;
+    }
 `;
 
 const FooterExplanations = styled.aside`
@@ -22,19 +25,24 @@ const FooterExplanations = styled.aside`
     flex-direction: column;
     justify-content: space-evenly;
     align-self: center;
-    
+    @media(max-width: 700px) {
+        width: 80%;
+    }
 `;
 
 const FooterTitle = styled.h2`
-    margin: 0px;
+    margin: 0px 20px;
     color: ${colors.white};
     font-size: 18px;
     justify-content: center;
+    @media(max-width: 1000px) {
+        align-self: center;
+    }
 `;
 
 const FooterDescription = styled.p`
     max-width: 400px;
-    margin: 0px;
+    margin: 0px 20px;
     font-size: 14px;
     align-self: center;
     color: ${colors.white};
@@ -56,6 +64,9 @@ const FooterBtn = styled(Link)`
     &:hover {
         animation: ${scale} 500ms both ease-in-out;
     }
+    @media (max-width: 1000px) {
+        align-self: center;
+    }
 `;
 
 const ContactContainer = styled.div`
@@ -63,6 +74,10 @@ const ContactContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     padding-bottom: 20px;
+    @media(max-width: 700px) {
+        width: 90%;
+        align-self: center;
+    }
 `;
 
 const ContactProductor = styled.a`

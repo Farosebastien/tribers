@@ -12,6 +12,10 @@ const TripItemContainer = styled.div`
 const TripImg = styled.img`
     width: 355px;
     height: 350px;
+    @media (max-width: 770px) {
+        width: 300px;
+        height: 300px;
+    }
 `;
 
 const TripLocation = styled.p`

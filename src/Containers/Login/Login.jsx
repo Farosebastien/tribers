@@ -14,40 +14,35 @@ const LoginBackground = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    background: ${colors.blackBackground} url(${Background}) center no-repeat;
+    background: url(${Background}) center no-repeat;
     background-size: cover;
     resize: both;
 `;
 
-const BackgroundBlur = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 170px;
-    background: ${colors.blurBackground};
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(4px);
-    height: 90vh;
-`;
-
 const BlogTitle = styled.h1`
-    z-index: 1;
     color: ${colors.white};
     font-size: 30px;
-    margin-bottom: 50px;
+    margin: 50px 10px;
+    text-align: center;
+    
 `;
 
 const BlogLogo = styled.img`
-    z-index: 1;
     width: 300px;
     margin-bottom: 50px;
+    @media (max-width: 580px) {
+        width: 200px;
+    }
 `;
 
 const BlogConnectionContainer = styled.div`
     display: flex;
     width: 80%;
     justify-content: space-around;
+    margin-bottom: 50px;
+    @media (max-width: 1020px) {
+        flex-direction: column;
+    }
 `;
 
 const BlogConnection = styled.div`
@@ -59,24 +54,26 @@ const BlogConnection = styled.div`
 const BlogLog = styled.div`
     display: flex;
     justify-content: space-between;
+    @media (max-width: 450px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const BlogP = styled.p`
-    z-index: 1;
     color: ${colors.white};
     font-size: 16px;
     margin: 20px 0px;
+    text-align: center;
 `;
 
 const BlogError = styled.p`
-    z-index: 1;
     color: ${colors.white};
     font-size: 16px;
     margin: 20px 0px;
 `;
 
 const BlogLink = styled(Link)`
-    z-index: 1;
     text-decoration: none;
     text-align: center;
     align-self: center;
@@ -95,14 +92,15 @@ const BlogLink = styled(Link)`
 `;
 
 const BlogIpt = styled.input`
-    z-index: 1;
     margin: 10px 20px;
     width: 300px;
     height: 30px;
+    @media (max-width: 580px) {
+        width: 200px;
+    }
 `;
 
 const BlogBtn = styled.button`
-    z-index: 1;
     text-decoration: none;
     text-align: center;
     align-self: center;
@@ -117,6 +115,9 @@ const BlogBtn = styled.button`
     font-weight: bold;
     &:hover {
         animation: ${scale} 500ms both ease-in-out;
+    }
+    @media (max-width: 1020px) {
+        margin-bottom: 50px;
     }
 `;
 
@@ -177,10 +178,10 @@ function Login() {
                     //Comparaison du mot de passe et de l'email de connection pour trouver l'utilisateur
                     if((email === user.email) && (password === user.password)){
                         //Stockage de ses données dans le local storage
-                        localStorage.setItem("userData", JSON.stringify({id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email, trips: user.trips}))
+                        localStorage.setItem("userData", JSON.stringify({id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email, trips: user.trips, dateConnect: new Date()}))
                         //Vidage de l'erreur, mise à jour du booléen isConnected avec toggleConnected et envoi de l'utilisateur sur la page du blog
                         setError("");
-                        toggleConnected();
+                        toggleConnected(true);
                         history(`/blog`);
                     //Si les entrées ne correspondent à aucun utilisateur de la mock API on l'indique dans l'erreur
                     } else {
@@ -225,7 +226,6 @@ function Login() {
                     </BlogConnectionContainer>
                 )}
             </LoginBackground>
-            <BackgroundBlur></BackgroundBlur>
         </>
 
     )

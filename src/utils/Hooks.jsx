@@ -47,6 +47,23 @@ export function useLogin () {
     //Récupération de isConnected et toggleConnected provenant de LoginContext 
     const { isConnected, toggleConnected } = useContext(LoginContext);
 
+    useEffect(() => {
+        const getConnectDate = async() => {
+            const data = await JSON.parse(localStorage.getItem("userData"));
+            return data ? data : null;
+        }
+        getConnectDate()
+        .then((data) => {
+            if (data) {
+                if((new Date(data.dateConnect).getTime() - new Date().getTime()) > -86400000) {
+                    toggleConnected(true);
+                } else {
+                    localStorage.removeItem("userData");
+                }
+            }
+        })
+    })
+
     //Retour de isConnected et toggleConnected
     return { isConnected, toggleConnected };
 }

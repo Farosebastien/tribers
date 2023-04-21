@@ -22,8 +22,9 @@ const BlogTitle = styled.h1`
 
 const BackgroundBlogImg = styled.img`
     width: 100%;
-    height: auto;
+    height: 400px;
     margin-top: -260px;
+    object-fit: cover;
 `;
 
 const PostContainer = styled.div`
@@ -34,11 +35,17 @@ const PostContainer = styled.div`
     border: 2px solid ${colors.primary};
     border-radius: 20px ;
     margin: 40px 0;
+    box-shadow: ${colors.primary} 2px 2px 10px 2px;
+    background-color: ${colors.goldBackground}
 `;
 
 const PostHeader = styled.div`
     display: flex;
     justify-content: space-evenly;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const PostAuthor = styled.span`

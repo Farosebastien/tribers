@@ -9,10 +9,20 @@ import "./Nav.css";
 const NavContainer = styled.nav`
     display: flex;
     margin-right: 50px;
+    @media (min-width: 701px) and (max-width: 1100px) {
+        margin: 0px;
+    }
+    @media(max-width: 700px) {
+        flex-direction: column;
+        margin: 0px;
+    }
 `;
 const NavBar = styled.div`
     margin: 10px 20px;
     line-height: 120px;
+    @media(max-width: 700px) {
+        margin: 0px;
+    }
 `;
 
 const NavLink = styled(Link)`
@@ -24,6 +34,9 @@ const NavLink = styled(Link)`
     cursor: pointer;
     &:hover {
         font-weight: bold;
+    }
+    @media(max-width: 360px) {
+        margin: 2px;
     }
 `;
 

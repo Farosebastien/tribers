@@ -8,6 +8,10 @@ const ExplanationList = styled.span`
     display: flex;
     margin: 10px 0px 0px 50px;
     align-items: center;
+    @media (max-width: 1050px) {
+        text-align: center;
+        margin: 10px 20px 0px 20px;
+    }
 `;
 
 const ExplanationTitle = styled.p`

@@ -19,7 +19,12 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 const ContactContainer = styled.div`
+display: flex;
     margin: 50px 20px 0px 20px;
+    @media(max-width: 700px) {
+        margin: 20px;
+        justify-content: center;
+    }
 `;
 
 

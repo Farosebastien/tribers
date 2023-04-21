@@ -9,18 +9,26 @@ const HeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: 1100px) {
+        flex-direction: column;
+    }
 `;
 
 const LogoImg = styled.img`
     width: 150px;
     height: 150px;
     margin: 10px 10px 10px 100px;
+    @media(max-width: 1100px) {
+        margin: 10px;
+    }
 `;
 
 function Header () {
 
+    
     //Récupération du booléen isConnected
     const { isConnected } = useLogin();
+
 
     //Rendu du composant header qui affiche le logo, le composant Nav et si l'utilisateur est connecté, sa UserBar
     return (
@@ -31,8 +39,7 @@ function Header () {
             </HeaderContainer>
             {isConnected && <UserBar />}
         </>
-        
-    );
+    )
 }
 
 //Exportation du composant

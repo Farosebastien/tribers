@@ -1,5 +1,5 @@
-import styled from "styled-components"; 
 import Background from "../../Images/background.webp";
+import styled from "styled-components"; 
 import colors from "../../utils/Colors";
 
 //Création de styled-components
@@ -8,26 +8,14 @@ const ValuesContainer = styled.section`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: ${colors.white} url(${Background}) center no-repeat;
+    background: url(${Background}) center no-repeat;
     background-size: cover;
     resize: both;
-    height: 200vh;
-`;
-
-const ValuesBackgroundBlur = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 170px;
-    background: ${colors.blurBackground};
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(4px);
-    height: 200vh;
 `;
 
 const ValueContainer = styled.div`
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: center;
     flex-direction: column;
     z-index: 1;
@@ -48,10 +36,9 @@ const ValueTitle = styled.p`
 
 const ValueContent = styled.p`
     color: ${colors.white};
-    width: 60%;
+    width: 90%;
     align-self: center;
     text-align: justify;
-
 `;
 
 function Values () {
@@ -88,7 +75,6 @@ function Values () {
                     </ValueContainer>
                 ))}
             </ValuesContainer>
-            <ValuesBackgroundBlur></ValuesBackgroundBlur>
         </>
     )
 }

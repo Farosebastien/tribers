@@ -6,6 +6,13 @@ import styled from "styled-components";
 const DescriptionContainer = styled.section`
     margin-top: -300px;
     display: flex;
+    @media (min-width: 1051px) and (max-width: 1200px) {
+        margin-top: -100px;
+    }
+    @media (max-width: 1050px){
+        flex-direction: column;
+        margin-top: 0px;
+    }
 `;
 
 function Description () {
